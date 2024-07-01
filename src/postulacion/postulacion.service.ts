@@ -15,7 +15,7 @@ export class PostulacionService {
       servicioId,
       usuarioId,
     });
-
+    
     return await nuevaPostulacion.save();
   }
 
