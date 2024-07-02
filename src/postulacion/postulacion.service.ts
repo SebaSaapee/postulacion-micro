@@ -18,6 +18,7 @@ export class PostulacionService {
       usuarioId,
     });
     await this.modelService.findByIdAndUpdate(servicioId, { $inc: { contadorSolicitudes: 1 } }).exec();
+    
     return await nuevaPostulacion.save();
   }
 
