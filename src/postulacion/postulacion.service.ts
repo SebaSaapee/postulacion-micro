@@ -39,15 +39,8 @@ export class PostulacionService {
     return { status: HttpStatus.OK, msg: 'Deleted' };
   }
 
- // async buscarHorariosDisponibles(servicioId: string, fechaSolicitada: string): Promise<string[]> {
-    // Implementación de lógica para buscar horarios disponibles
-    // Esto dependerá de la configuración del servicio y la lógica de negocio específica.
-    // Por ejemplo, podrías consultar las postulaciones existentes para el servicio y fecha solicitada
-    // y determinar los horarios disponibles.
-
-    // Supongamos una implementación básica para demostración:
-  //  const horariosDisponibles = ['09:00', '10:00', '11:00', '12:00', '13:00'];
-  //  return horariosDisponibles;
- // }
+  async findByUser(userId: string): Promise<IPostulacion[]> {
+    return await this.model.find({ usuarioId: userId }).exec();
+  }
 
 }

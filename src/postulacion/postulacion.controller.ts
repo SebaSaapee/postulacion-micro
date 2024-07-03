@@ -42,10 +42,9 @@ export class PostulacionController {
   async delete(@Payload() id: string) {
     return await this.postulacionService.delete(id);
   }
-
- // @MessagePattern(PostulacionMsg.BUSCAR_HORARIOS_DISPONIBLES)
-  //async buscarHorariosDisponibles(@Payload() payload: any) {
-   // const { servicioId, fechaSolicitada } = payload;
-   // return await this.postulacionService.buscarHorariosDisponibles(servicioId, fechaSolicitada);
-  //}
+  
+  @MessagePattern(PostulacionMsg.FIND_BY_USER)
+  async findByUser(@Payload() userId: string) {
+    return await this.postulacionService.findByUser(userId);
+  }
 }
